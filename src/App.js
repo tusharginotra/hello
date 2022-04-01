@@ -5,7 +5,6 @@ import Alert from './components/Alert';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import React from 'react';
-import list from './components/list';
 import TextForm from './components/TextForm';
 import {
   BrowserRouter as Router,
@@ -51,15 +50,16 @@ function App() {
   return (
     <>
     <Router>
-     <Navbar title = "HealthQueen" mode={mode} toggleMode={toggleMode} />
+     <Navbar title = "TextUtils" mode={mode} toggleMode={toggleMode} />
      <Alert alert={alert} />
     <div className="container my -3">    
       
         <Routes>
+            <Route path="/" element={<TextForm heading="Try Text Utils: Work Counter, Character Counter,Remove Extra spaces"  mode={mode} showAlert={showAlert} />}>
+            </Route>
             <Route path="/About" element={<About mode={mode} />}>
             </Route>
-            <Route path="/List" element={<list />}>
-            </Route>
+            
             <Route path="/TextForm" element={<TextForm heading="Try Text Utils: Work Counter, Character Counter,Remove Extra spaces"  mode={mode} showAlert={showAlert} />}>
             </Route>
           </Routes>
